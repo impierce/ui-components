@@ -1,9 +1,9 @@
 {
   "name": "ui-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && npm run package",
+    "build": "vite build && npm run package && npm run build:tailwind",
     "preview": "vite preview",
     "package": "svelte-kit sync && svelte-package && publint",
     "prepublishOnly": "npm run package",
@@ -18,7 +18,7 @@
     "watch:storybook": "storybook dev -p 6006 --no-open",
     "watch:tailwind": "npx tailwindcss -i ./src/app.css -o ./static/tailwind.css --watch",
     "build-storybook": "npm run build:tailwind && storybook build",
-    "build:tailwind": "npx tailwindcss -i ./src/app.css -o ./static/tailwind.css"
+    "build:tailwind": "npx tailwindcss -i ./src/app.css -o ./static/tailwind.css -o ./dist/main.css"
   },
   "exports": {
     ".": {
