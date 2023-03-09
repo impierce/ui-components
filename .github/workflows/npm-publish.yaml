@@ -16,11 +16,11 @@ jobs:
         with:
           node-version: 18
       - run: npm ci
-      - name: "unit tests"
+      - name: 'unit tests'
         run: npm run test:unit
-      - name: "install playwright browsers"
+      - name: 'install playwright browsers'
         run: npx playwright install --with-deps
-      - name: "e2e tests"  
+      - name: 'e2e tests'
         run: npm test
 
   publish-gpr:
@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          registry-url: https://npm.pkg.github.com/
+          registry-url: 'https://npm.pkg.github.com/'
       - run: npm ci
       - run: npm publish
         env:
