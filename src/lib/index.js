@@ -1,7 +1,13 @@
 import './main.css';
 
-// Reexport your entry components here
+// Atoms
 import Button from './atoms/Button.svelte';
+
+// Molecules
+import BottomNavigation from './molecules/BottomNavigation.svelte';
 import CredentialListEntry from './molecules/CredentialListEntry.svelte';
 
-export { Button, CredentialListEntry };
+// Templates
+import ActionTemplate from './templates/ActionTemplate.svelte';
+
+export { Button, BottomNavigation, CredentialListEntry, ActionTemplate };

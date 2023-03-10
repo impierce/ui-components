@@ -23,13 +23,13 @@
   /**
    * Button contents
    */
-  export let label: string = '';
+  export let label: string;
 
   // $: mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
 
   $: mode =
     type == 'accept'
-      ? 'bg-gradient-to-b from-purple-500 to-violet-600 text-white shadow-lg shadow-violet-600/50'
+      ? 'bg-gradient-to-b from-violet-500 to-violet-600 text-white shadow shadow-violet-600/50'
       : 'bg-red-100 text-red-500';
 
   //   $: style = backgroundColor ? `background-color: ${backgroundColor}` : '';

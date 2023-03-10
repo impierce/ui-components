@@ -1,11 +1,11 @@
 <script lang="ts">
   import Button from '$lib/atoms/Button.svelte';
 
-  export let title: string;
-  export let description: string = '';
+  export let title = 'Title';
+  export let description = 'Description';
 </script>
 
-<div class="grid">
+<div class="flex flex-col h-full">
   <!-- Description (text) -->
   <p class="font-semibold text-2xl">
     {title}
@@ -14,10 +14,14 @@
     {description}
   </p>
 
-  <!-- Mid section -->
-  <slot name="mid-section">
-    <div class="h-24 rounded-lg border my-4" />
-  </slot>
+  <!-- Content -->
+  <div class="my-4 grow">
+    <slot name="content">
+      <div class="h-full border rounded-lg grid place-content-center text-neutral-400 grow">
+        content
+      </div>
+    </slot>
+  </div>
 
   <!-- Buttons -->
   <div class="flex flex-col space-y-4">

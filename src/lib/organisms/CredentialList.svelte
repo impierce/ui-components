@@ -12,7 +12,7 @@
 <div class="space-y-4">
   {#each credentials as credential}
     <CredentialListEntry title={credential.title} description={credential.description}>
-      <span slot="icon"><AcademicCap class="text-slate-500" /></span>
+      <span slot="icon"><AcademicCap class="text-violet-500" /></span>
     </CredentialListEntry>
   {/each}
 </div>
