@@ -1,17 +1,11 @@
 <script>
-  import BottomNavigation from '$lib/molecules/BottomNavigation.svelte';
-  import ActionTemplate from '$lib/templates/ActionTemplate.svelte';
+  import { goto } from '$app/navigation';
 </script>
 
-<link href="/tailwind.css" rel="stylesheet" />
-
-<!-- <h1>Welcome to your library project</h1> -->
-<!-- <p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p> -->
-<!-- <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p> -->
-
-<div class="flex flex-col h-screen">
-  <div class="grow p-6">
-    <ActionTemplate />
+<div class="p-4">
+  <h1 class="font-bold text-2xl">Use cases</h1>
+  <div class="flex flex-col space-y-4 p-4">
+    <button class="rounded border shadow px-4 py-2 text-slate-500" on:click={() => goto('/welcome')}>👋 Welcome new user</button>
+    <button class="rounded border shadow px-4 py-2 text-slate-500" on:click={() => goto('/profile')}>🔑 Login to website</button>
   </div>
-  <BottomNavigation />
 </div>
