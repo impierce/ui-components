@@ -7,10 +7,10 @@
 
 <div class="flex flex-col h-full">
   <!-- Description (text) -->
-  <p class="font-semibold text-2xl">
+  <p class="font-semibold text-2xl text-center">
     {title}
   </p>
-  <p class="font-normal opacity-50">
+  <p class="font-normal opacity-50 text-center">
     {description}
   </p>
 
