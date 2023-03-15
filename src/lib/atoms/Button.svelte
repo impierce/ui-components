@@ -51,5 +51,5 @@
   } ${mode}`}
   on:click={() => dispatch('clicked')}
 >
-  <p class="font-poppins">{label}</p>
+  {label}
 </button>
