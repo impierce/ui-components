@@ -6,10 +6,11 @@
   import CredentialListEntry from '$lib/molecules/CredentialListEntry.svelte';
   import ActionTemplate from '$lib/templates/ActionTemplate.svelte';
   import { AtSymbol, FingerPrint } from 'svelte-heros-v2';
+  import { fly, slide, blur } from 'svelte/transition';
 </script>
 
 <div class="flex flex-col h-screen">
-  <div class="grow p-6">
+  <div class="grow p-6" in:fly="{{ x: 50, delay: 400, duration: 400 }}">
     <ActionTemplate
       title="Share credentials"
       description="bestdex.com wants to access your following credentials and information"

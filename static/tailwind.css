@@ -533,6 +533,10 @@ video {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -567,6 +571,10 @@ video {
 
 .top-12 {
   top: 3rem;
+}
+
+.top-\[100vh\] {
+  top: 100vh;
 }
 
 .-z-10 {
@@ -666,6 +674,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-12 {
