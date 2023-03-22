@@ -4,10 +4,11 @@
   import BottomNavigation from '$lib/molecules/BottomNavigation.svelte';
   import ActionTemplate from '$lib/templates/ActionTemplate.svelte';
   import { CheckBadge, QuestionMarkCircle } from 'svelte-heros-v2';
+  import { fly, slide } from 'svelte/transition';
 </script>
 
 <div class="flex flex-col h-screen">
-  <div class="grow p-6">
+  <div class="grow p-6" in:slide="{{ duration: 400 }}" out:fly="{{ x: -50, duration: 400 }}">
     <ActionTemplate
       title="Log in to bestdex.com"
       description="bestdex.com is asking for your permission to log in"

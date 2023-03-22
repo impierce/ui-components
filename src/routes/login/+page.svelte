@@ -3,10 +3,11 @@
   import Button from '$lib/atoms/Button.svelte';
   import BottomNavigation from '$lib/molecules/BottomNavigation.svelte';
   import ActionTemplate from '$lib/templates/ActionTemplate.svelte';
+  import { slide } from 'svelte/transition';
 </script>
 
 <div class="flex flex-col h-screen">
-  <div class="grow p-6">
+  <div class="grow p-6" in:slide="{{ duration: 400 }}">
     <ActionTemplate title="Login" description="Please point the camera towards a QR code">
       <div
         slot="content"
