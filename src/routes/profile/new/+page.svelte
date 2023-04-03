@@ -4,10 +4,12 @@
   import Input from '$lib/atoms/Input.svelte';
   import ActionTemplate from '$lib/templates/ActionTemplate.svelte';
 
-  let seed: string[] = "alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu".split(' ')
+  let seed: string[] = 'alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu'.split(
+    ' '
+  );
 </script>
 
-<div class="p-6 h-screen">
+<div class="h-screen p-6">
   <ActionTemplate title="Create new profile" description="">
     <div slot="content" class="h-full">
       <div class="">

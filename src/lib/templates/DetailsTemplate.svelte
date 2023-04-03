@@ -5,10 +5,10 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<div class="bg-white h-full w-full flex flex-col">
+<div class="flex h-full w-full flex-col bg-white">
   <div class="flex justify-end p-2">
     <button
-      class="p-2 rounded-full"
+      class="rounded-full p-2"
       on:click={() => dispatch('clicked')}
       on:keyup={() => dispatch('clicked')}
     >
@@ -16,7 +16,7 @@
     </button>
   </div>
   <div
-    class="grow grid place-content-center mx-6 mb-6 border border-slate-300 rounded-lg text-neutral-400"
+    class="mx-6 mb-6 grid grow place-content-center rounded-lg border border-slate-300 text-neutral-400"
   >
     content
   </div>

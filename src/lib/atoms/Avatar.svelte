@@ -16,24 +16,24 @@
 
 <div class={`${size == 'small' ? 'h-14 w-14' : 'h-24 w-24'} relative drop-shadow-md`}>
   <div
-    class="rounded-full bg-white w-full h-full absolute left-0 top-0 ring-1 ring-slate-300 border-slate-300"
+    class="absolute left-0 top-0 h-full w-full rounded-full border-slate-300 bg-white ring-1 ring-slate-300"
   />
   <div
     class={`${
       size == 'small' ? 'h-12 w-12' : ''
-    } m-1 rounded-full bg-slate-200 absolute ring-1 ring-slate-300 flex justify-center items-center`}
+    } absolute m-1 flex items-center justify-center rounded-full bg-slate-200 ring-1 ring-slate-300`}
     style={`${size == 'small' ? '' : 'height: 88px; width: 88px;'}`}
   >
     {#if imageSrc}
       <img
-        class="rounded-full bg-slate-200 h-full w-full object-cover"
+        class="h-full w-full rounded-full bg-slate-200 object-cover"
         src={imageSrc}
         alt={'avatar'}
       />
     {:else if initials?.length === 2}
-      <div class="font-semibold text-slate-400 text-xl">{initials}</div>
+      <div class="text-xl font-semibold text-slate-400">{initials}</div>
     {:else}
-      <div class="font-semibold text-slate-400 text-xl"><Camera /></div>
+      <div class="text-xl font-semibold text-slate-400"><Camera /></div>
     {/if}
   </div>
 </div>

@@ -9,8 +9,8 @@
   import { fly, slide, blur } from 'svelte/transition';
 </script>
 
-<div class="flex flex-col h-screen">
-  <div class="grow p-6" in:fly="{{ x: 50, delay: 400, duration: 400 }}">
+<div class="flex h-screen flex-col">
+  <div class="grow p-6" in:fly={{ x: 50, delay: 400, duration: 400 }}>
     <ActionTemplate
       title="Share credentials"
       description="bestdex.com wants to access your following credentials and information"
@@ -24,9 +24,9 @@
             <span slot="icon"><AtSymbol class="text-violet-500" /></span>
           </CredentialListEntry>
         </div>
-        <div class="p-8 grid">
+        <div class="grid p-8">
           <ProgressBar value={60} />
-          <span class="text-violet-700 font-medium text-center">Medium data sensitivity</span>
+          <span class="text-center font-medium text-violet-700">Medium data sensitivity</span>
         </div>
       </div>
       <div slot="buttons" class="flex flex-col space-y-4">
