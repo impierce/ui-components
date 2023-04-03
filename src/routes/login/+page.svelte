@@ -6,15 +6,15 @@
   import { slide } from 'svelte/transition';
 </script>
 
-<div class="flex flex-col h-screen">
-  <div class="grow p-6" in:slide="{{ duration: 400 }}">
+<div class="flex h-screen flex-col">
+  <div class="grow p-6" in:slide={{ duration: 400 }}>
     <ActionTemplate title="Login" description="Please point the camera towards a QR code">
       <div
         slot="content"
-        class="h-full border rounded-lg grid place-content-center text-neutral-400 grow"
+        class="grid h-full grow place-content-center rounded-lg border text-neutral-400"
       >
         <button
-          class="shadow border border-slate-200 text-violet-600 font-semibold py-2 px-4 rounded-lg"
+          class="rounded-lg border border-slate-200 py-2 px-4 font-semibold text-violet-600 shadow"
           on:click={() => goto('/login/confirm')}>Click to scan</button
         >
       </div>

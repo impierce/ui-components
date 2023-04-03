@@ -8,8 +8,12 @@
   export let description = '';
 </script>
 
-<div class="rounded-lg bg-slate-100 p-4 flex hover:cursor-pointer" on:click={() => dispatch('clicked')} on:keyup={() => dispatch('clicked')}>
-  <div class="rounded-md bg-violet-100 p-2 mr-4 w-12 h-12 grid place-items-center">
+<div
+  class="flex rounded-lg bg-slate-100 p-4 hover:cursor-pointer"
+  on:click={() => dispatch('clicked')}
+  on:keyup={() => dispatch('clicked')}
+>
+  <div class="mr-4 grid h-12 w-12 place-items-center rounded-md bg-violet-100 p-2">
     <!-- <div class="flex w-full h-full"> -->
     <slot name="icon">
       <QuestionMarkCircle class="text-violet-500" />
@@ -17,7 +21,7 @@
     <!-- </div> -->
   </div>
   <div class="">
-    <p class="opacity-80 font-semibold">{title}</p>
-    <p class="opacity-50 text-sm">{description}</p>
+    <p class="font-semibold opacity-80">{title}</p>
+    <p class="text-sm opacity-50">{description}</p>
   </div>
 </div>

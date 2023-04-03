@@ -7,29 +7,29 @@
   import { fly, slide } from 'svelte/transition';
 </script>
 
-<div class="flex flex-col h-screen">
-  <div class="grow p-6" in:slide="{{ duration: 400 }}" out:fly="{{ x: -50, duration: 400 }}">
+<div class="flex h-screen flex-col">
+  <div class="grow p-6" in:slide={{ duration: 400 }} out:fly={{ x: -50, duration: 400 }}>
     <ActionTemplate
       title="Log in to bestdex.com"
       description="bestdex.com is asking for your permission to log in"
     >
-      <div slot="content" class="h-full border rounded-lg">
-        <div class="flex p-6 space-x-4">
-          <div class="rounded-full p-4 border  h-max">
+      <div slot="content" class="h-full rounded-lg border">
+        <div class="flex space-x-4 p-6">
+          <div class="h-max rounded-full border  p-4">
             <QuestionMarkCircle class="text-neutral-300" />
           </div>
           <div class="flex-auto space-y-8">
             <!-- Name -->
             <div class="flex flex-col">
-              <span class="text-neutral-500 text-sm">Name</span>
+              <span class="text-sm text-neutral-500">Name</span>
               <span class="text-xl font-semibold">bestdex.com</span>
             </div>
 
             <!-- URL -->
             <div class="flex flex-col">
-              <span class="text-neutral-500 text-sm">URL address</span>
+              <span class="text-sm text-neutral-500">URL address</span>
               <div class="flex flex-row">
-                <span class="break-all font-mono text-xs flex items-center">
+                <span class="flex items-center break-all font-mono text-xs">
                   https://www.bestdex.com/siop?key=my%20value&type=user
                 </span>
                 <div class="ml-2">
@@ -40,7 +40,7 @@
 
             <!-- Status -->
             <div class="flex flex-col">
-              <span class="text-neutral-500 text-sm">Status</span>
+              <span class="text-sm text-neutral-500">Status</span>
               <div class="flex flex-row">
                 <span class="">Not connected</span>
                 <div class="ml-2">

@@ -14,19 +14,19 @@
 
 <div class="min-h-screen">
   <button
-    class="absolute z-0 bg-white p-3 rounded-full top-12 right-6 shadow-md"
+    class="absolute top-12 right-6 z-0 rounded-full bg-white p-3 shadow-md"
     on:click={() => goto('/login')}
   >
     <QrCode size="28" class="text-violet-800" />
   </button>
-  <img src="blobs.png" alt="background-blobs" class="opacity-60 w-full absolute -z-10" />
-  <div class="bg-white rounded-t-3xl h-5/6 absolute bottom-0 w-full">
-    <div class="flex justify-center relative bottom-12 -mb-8">
+  <img src="blobs.png" alt="background-blobs" class="absolute -z-10 w-full opacity-60" />
+  <div class="absolute bottom-0 h-5/6 w-full rounded-t-3xl bg-white">
+    <div class="relative bottom-12 -mb-8 flex justify-center">
       <Avatar size="large" />
     </div>
-    <div class="flex justify-center font-bold text-3xl">John Doe</div>
+    <div class="flex justify-center text-3xl font-bold">John Doe</div>
     <!-- w-full absolute bottom-0 -z-10" /> -->
-    <div class="p-6 space-y-4">
+    <div class="space-y-4 p-6">
       <!-- Personal information -->
       <CredentialListEntry
         title={credentials[0].title}

@@ -5,19 +5,19 @@
   export let description = 'Description';
 </script>
 
-<div class="flex flex-col h-full">
+<div class="flex h-full flex-col">
   <!-- Description (text) -->
-  <p class="font-semibold text-2xl text-center">
+  <p class="text-center text-2xl font-semibold">
     {title}
   </p>
-  <p class="font-normal opacity-50 text-center">
+  <p class="text-center font-normal opacity-50">
     {description}
   </p>
 
   <!-- Content -->
   <div class="my-4 grow">
     <slot name="content">
-      <div class="h-full border rounded-lg grid place-content-center text-neutral-400 grow">
+      <div class="grid h-full grow place-content-center rounded-lg border text-neutral-400">
         content
       </div>
     </slot>
