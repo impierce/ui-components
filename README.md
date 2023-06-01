@@ -9,6 +9,12 @@ npm run storybook
 
 > Go to http://localhost:6006 to see a live preview of the components!
 
+```bash
+npm run dev
+```
+
+> Go to http://localhost:3000 to browse through pre-defined user flows (mock data)
+
 ## Build
 
 ```bash

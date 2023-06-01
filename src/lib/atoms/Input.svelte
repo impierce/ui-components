@@ -8,7 +8,7 @@
 
   let timer: any;
 
-  export let placeholder = 'Enter search term ...';
+  export let placeholder = 'Type something here ...';
 
   const dispatch = createEventDispatcher();
 
@@ -37,9 +37,8 @@
   <input
     class="w-full appearance-none rounded-md py-2 px-4 text-sm leading-6 text-slate-900 placeholder-slate-400 shadow-sm ring-1 ring-slate-200 focus:outline-none focus:ring-2 focus:ring-violet-500"
     type="text"
-    aria-label="Filter employees"
     {placeholder}
-    id="search-input"
+    id="input"
     bind:value={inputValue}
     on:input={(e) => debounce(e.target.value)}
   />
