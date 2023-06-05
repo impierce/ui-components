@@ -40,7 +40,12 @@
     "svelte": "^3.57.0"
   },
   "dependencies": {
-    "svelte-heros-v2": "^0.4.2"
+    "class-variance-authority": "^0.6.0",
+    "clsx": "^1.2.1",
+    "lucide-svelte": "^0.236.0",
+    "svelte-heros-v2": "^0.4.2",
+    "tailwind-merge": "^1.13.0",
+    "tailwindcss-animate": "^1.0.5"
   },
   "devDependencies": {
     "@playwright/test": "^1.28.1",
