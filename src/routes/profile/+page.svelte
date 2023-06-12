@@ -4,15 +4,22 @@
   import BottomNavigation from '$lib/molecules/BottomNavigation.svelte';
   import CredentialListEntry from '$lib/molecules/CredentialListEntry.svelte';
   import { CreditCard, FingerPrint, Identification, QrCode } from 'svelte-heros-v2';
+  import AlertDialog from '$lib/molecules/AlertDialog.svelte';
 
   export let credentials: any = [
     { title: 'Personal information', description: 'Self-issued credential' },
     { title: 'Banking details', description: 'Barclays' },
     { title: 'ID card copy', description: 'Passport Office' }
   ];
+
+  let showAlert = false;
 </script>
 
 <div class="min-h-screen">
+  {#if showAlert}
+    <AlertDialog />
+  {/if}
+
   <button
     class="absolute top-12 right-6 z-0 rounded-full bg-white p-3 shadow-md"
     on:click={() => goto('/login')}
@@ -31,7 +38,7 @@
       <CredentialListEntry
         title={credentials[0].title}
         description={credentials[0].description}
-        on:clicked={() => goto('/credentials')}
+        on:clicked={() => showAlert = true}
       >
         <span slot="icon"><FingerPrint class="text-violet-500" /></span>
       </CredentialListEntry>
