@@ -1,6 +1,6 @@
 {
   "name": "@impierce/ui-components",
-  "version": "0.0.11-alpha",
+  "version": "0.0.12-alpha",
   "repository": {
     "type": "git",
     "url": "https://github.com/Impierce/ui-components.git"
@@ -20,9 +20,9 @@
     "format": "prettier --plugin-search-dir . --write .",
     "storybook": "concurrently 'npm:watch:*' ",
     "watch:storybook": "storybook dev -p 6006 --no-open",
-    "watch:tailwind": "npx tailwindcss -i ./src/app.css -o ./static/tailwind.css --watch",
+    "watch:tailwind": "npx tailwindcss -i ./src/app.postcss -o ./static/tailwind.css --watch",
     "build-storybook": "npm run build:tailwind && storybook build",
-    "build:tailwind": "npx tailwindcss -i ./src/app.css -o ./static/tailwind.css -o ./dist/main.css"
+    "build:tailwind": "npx tailwindcss -i ./src/app.postcss -o ./static/tailwind.css -o ./dist/main.css"
   },
   "exports": {
     ".": {
@@ -43,6 +43,7 @@
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "lucide-svelte": "^0.236.0",
+    "radix-svelte": "^0.7.1",
     "svelte-heros-v2": "^0.4.2",
     "tailwind-merge": "^1.13.0",
     "tailwindcss-animate": "^1.0.5"

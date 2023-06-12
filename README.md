@@ -1,5 +1,8 @@
 # Impierce UI Component Library
 
+This component library uses [shadcn-svelte](https://www.shadcn-svelte.com) for the underlying components and then applies custom styling.
+The raw components (`npx shadcn-svelte add ...`) are located in `src/lib/components/ui`.
+
 ## Local development
 
 ```bash
