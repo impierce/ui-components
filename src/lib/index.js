@@ -5,6 +5,7 @@ import Avatar from './atoms/Avatar.svelte';
 // import Button from './atoms/Button.svelte';
 // import Input from './atoms/Input.svelte';
 import ProgressBar from './atoms/ProgressBar.svelte';
+import Select from './atoms/select/Select.svelte';
 
 // Molecules
 import BottomNavigation from './molecules/BottomNavigation.svelte';
@@ -24,6 +25,7 @@ import LoadingSpinner from './LoadingSpinner.svelte';
 export {
   Avatar,
   Button,
+  Select,
   LoadingSpinner,
   Input,
   Label,
