@@ -44,6 +44,7 @@
     "clsx": "^1.2.1",
     "lucide-svelte": "^0.236.0",
     "radix-svelte": "^0.7.1",
+    "svelte-headlessui": "^0.0.16",
     "svelte-heros-v2": "^0.4.2",
     "tailwind-merge": "^1.13.0",
     "tailwindcss-animate": "^1.0.5"
