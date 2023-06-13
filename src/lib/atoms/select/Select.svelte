@@ -6,6 +6,7 @@ issue: https://github.com/huntabyte/shadcn-svelte/issues/105
   import Transition from 'svelte-transition';
   import Selector from './Selector.svelte';
   import Check from './Check.svelte';
+  import { Check as Chk, ChevronDown } from 'svelte-heros-v2';
 
   type Person = { name: string };
   type People = Person[];
@@ -38,7 +39,8 @@ issue: https://github.com/huntabyte/shadcn-svelte/issues/105
       >
         <span class="block truncate">{$listbox.selected.name}</span>
         <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-          <Selector class="h-5 w-5 text-gray-400" />
+          <!-- <Selector class="h-5 w-5 text-gray-400" /> -->
+          <ChevronDown class="h-5 w-5 text-gray-400" />
         </span>
       </button>
 
@@ -66,7 +68,8 @@ issue: https://github.com/huntabyte/shadcn-svelte/issues/105
               >
               {#if selected}
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
-                  <Check class="h-5 w-5" />
+                  <!-- <Check class="h-5 w-5" /> -->
+                  <Chk class="h-5 w-5" strokeWidth="2" />
                 </span>
               {/if}
             </li>
