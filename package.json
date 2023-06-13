@@ -42,6 +42,7 @@
   "dependencies": {
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
+    "flag-icons": "^6.7.0",
     "lucide-svelte": "^0.236.0",
     "radix-svelte": "^0.7.1",
     "svelte-headlessui": "^0.0.16",

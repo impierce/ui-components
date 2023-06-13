@@ -5,7 +5,7 @@ import Avatar from './atoms/Avatar.svelte';
 // import Button from './atoms/Button.svelte';
 // import Input from './atoms/Input.svelte';
 import ProgressBar from './atoms/ProgressBar.svelte';
-import Select from './atoms/select/Select.svelte';
+import Select from './atoms/Select.svelte';
 
 // Molecules
 import BottomNavigation from './molecules/BottomNavigation.svelte';
@@ -22,6 +22,8 @@ import { Label } from './components/ui/label/index';
 
 import LoadingSpinner from './LoadingSpinner.svelte';
 
+// export { default as Select } from './atoms/select/Select.svelte';
+
 export {
   Avatar,
   Button,
@@ -37,5 +39,5 @@ export {
 };
 
 export * from './components/ui/sheet';
-export * from './components/ui/alert';
+// export * from './components/ui/alert';
 export * from './components/ui/alert-dialog';
