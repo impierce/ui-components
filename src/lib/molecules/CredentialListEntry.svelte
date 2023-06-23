@@ -20,7 +20,7 @@
     </slot>
     <!-- </div> -->
   </div>
-  <div class="">
+  <div class="flex flex-col items-start">
     <p class="font-semibold opacity-80">{title}</p>
     <p class="text-sm opacity-50">{description}</p>
   </div>

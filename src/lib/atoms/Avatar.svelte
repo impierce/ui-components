@@ -26,7 +26,7 @@
   >
     {#if imageSrc}
       <img
-        class="h-full w-full rounded-full bg-slate-200 object-cover"
+        class="h-full w-full rounded-full bg-slate-200 object-scale-down"
         src={imageSrc}
         alt={'avatar'}
       />

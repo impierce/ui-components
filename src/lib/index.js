@@ -19,8 +19,9 @@ import DetailsTemplate from './templates/DetailsTemplate.svelte';
 import { Button } from './components/ui/button/index';
 import { Input } from './components/ui/input/index';
 import { Label } from './components/ui/label/index';
+import { Checkbox } from './components/ui/checkbox/index';
 
-import LoadingSpinner from './LoadingSpinner.svelte';
+import { ThreeDotsFade as LoadingSpinner } from 'svelte-svg-spinners';
 
 // export { default as Select } from './atoms/select/Select.svelte';
 
@@ -31,6 +32,7 @@ export {
   LoadingSpinner,
   Input,
   Label,
+  Checkbox,
   ProgressBar,
   BottomNavigation,
   CredentialListEntry,
@@ -41,3 +43,4 @@ export {
 export * from './components/ui/sheet';
 // export * from './components/ui/alert';
 export * from './components/ui/alert-dialog';
+export * from './components/ui/accordion';

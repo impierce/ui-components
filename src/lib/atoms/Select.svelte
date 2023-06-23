@@ -18,7 +18,8 @@ issue: https://github.com/huntabyte/shadcn-svelte/issues/105
 		{ displayName: 'Deutsch', i18n: 'de', isoCode: 'de' }
 	]
 
-  export let selected: string = supportedLanguages[1].displayName;
+  // TODO: BUG: bind this input to $listbox.selected
+  export let selected: string = supportedLanguages[0].displayName; // default
 
   // TODO: type list so 'selected' isn't 'any'
   const listbox = createListbox<SupportedLanguages>({

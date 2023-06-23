@@ -1,6 +1,6 @@
 {
   "name": "@impierce/ui-components",
-  "version": "0.0.12-alpha",
+  "version": "0.0.13-alpha",
   "repository": {
     "type": "git",
     "url": "https://github.com/Impierce/ui-components.git"
@@ -47,6 +47,7 @@
     "radix-svelte": "^0.7.1",
     "svelte-headlessui": "^0.0.16",
     "svelte-heros-v2": "^0.4.2",
+    "svelte-svg-spinners": "^0.2.0",
     "tailwind-merge": "^1.13.0",
     "tailwindcss-animate": "^1.0.5"
   },
