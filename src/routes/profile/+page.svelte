@@ -5,6 +5,7 @@
   import CredentialListEntry from '$lib/molecules/CredentialListEntry.svelte';
   import { CreditCard, FingerPrint, Identification, QrCode } from 'svelte-heros-v2';
   import AlertDialog from '$lib/molecules/AlertDialog.svelte';
+  import Select from '$lib/atoms/Select.svelte';
 
   export let credentials: any = [
     { title: 'Personal information', description: 'Self-issued credential' },
@@ -32,13 +33,18 @@
       <Avatar size="large" />
     </div>
     <div class="flex justify-center text-3xl font-bold">John Doe</div>
+
+    <div class="flex justify-center">
+      <Select />
+    </div>
+
     <!-- w-full absolute bottom-0 -z-10" /> -->
     <div class="space-y-4 p-6">
       <!-- Personal information -->
       <CredentialListEntry
         title={credentials[0].title}
         description={credentials[0].description}
-        on:clicked={() => showAlert = true}
+        on:clicked={() => (showAlert = true)}
       >
         <span slot="icon"><FingerPrint class="text-violet-500" /></span>
       </CredentialListEntry>

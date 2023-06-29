@@ -2,6 +2,7 @@
 
 This component library uses [shadcn-svelte](https://www.shadcn-svelte.com) for the underlying components and then applies custom styling.
 The raw components (`npx shadcn-svelte add ...`) are located in `src/lib/components/ui`.
+Note: some components that do not exist in shadcn-svelte yet have been imported from [svelte-headlessui](https://captaincodeman.github.io/svelte-headlessui).
 
 ## Local development
 

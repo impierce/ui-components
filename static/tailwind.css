@@ -813,6 +813,10 @@ body {
   height: 2.25rem;
 }
 
+.h-\[18px\] {
+  height: 18px;
+}
+
 .h-\[24px\] {
   height: 24px;
 }
@@ -890,6 +894,10 @@ body {
   width: 18rem;
 }
 
+.w-\[24px\] {
+  width: 24px;
+}
+
 .w-\[44px\] {
   width: 44px;
 }
@@ -902,6 +910,10 @@ body {
   width: 100vw;
 }
 
+.min-w-\[12rem\] {
+  min-width: 12rem;
+}
+
 .max-w-lg {
   max-width: 32rem;
 }
@@ -910,12 +922,12 @@ body {
   max-width: 28rem;
 }
 
-.flex-auto {
-  flex: 1 1 auto;
-}
-
 .flex-1 {
   flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
 }
 
 .shrink-0 {
@@ -1113,12 +1125,12 @@ body {
   border-width: 2px;
 }
 
-.border-t {
-  border-top-width: 1px;
-}
-
 .border-b {
   border-bottom-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
 }
 
 .border-destructive\/50 {
@@ -1127,6 +1139,10 @@ body {
 
 .border-input {
   border-color: hsl(var(--input));
+}
+
+.border-primary {
+  border-color: hsl(var(--primary));
 }
 
 .border-slate-200 {
@@ -1141,10 +1157,6 @@ body {
 
 .border-transparent {
   border-color: transparent;
-}
-
-.border-primary {
-  border-color: hsl(var(--primary));
 }
 
 .bg-amber-100 {
@@ -1215,11 +1227,6 @@ body {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-blue-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
 }
@@ -1258,16 +1265,6 @@ body {
 
 .fill-current {
   fill: currentColor;
-}
-
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.object-fill {
-  -o-object-fit: fill;
-     object-fit: fill;
 }
 
 .object-scale-down {
@@ -1330,6 +1327,10 @@ body {
   padding-bottom: 1rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .pl-10 {
   padding-left: 2.5rem;
 }
@@ -1350,16 +1351,12 @@ body {
   padding-right: 1rem;
 }
 
-.pt-1 {
-  padding-top: 0.25rem;
-}
-
-.pb-4 {
-  padding-bottom: 1rem;
-}
-
 .pt-0 {
   padding-top: 0px;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
 }
 
 .text-left {
@@ -1459,6 +1456,10 @@ body {
 .text-blue-900 {
   --tw-text-opacity: 1;
   color: rgb(30 58 138 / var(--tw-text-opacity));
+}
+
+.text-current {
+  color: currentColor;
 }
 
 .text-destructive {
@@ -1572,10 +1573,6 @@ body {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-current {
-  color: currentColor;
 }
 
 .underline-offset-4 {
