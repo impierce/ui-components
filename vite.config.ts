@@ -15,7 +15,7 @@ export default defineConfig({
     include: ['src/**/*.{test,spec}.{js,ts}'],
     // Extend jest-dom matchers
     setupFiles: ['./setupTest.js']
-  },
+  }
   // ssr: {
   //   noExternal: ['svelte-transition']
   // }

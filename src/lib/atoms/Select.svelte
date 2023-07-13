@@ -24,12 +24,11 @@ currently using component: https://captaincodeman.github.io/svelte-headlessui/li
   type Language = { displayName: string; i18n: string; isoCode: string; component: any };
   type SupportedLanguages = Language[];
 
-  // prettier-ignore
   const supportedLanguages: SupportedLanguages = [
-		{ displayName: 'English', i18n: 'en', isoCode: 'gb', component: Gb_flag },
-		{ displayName: 'Nederlands', i18n: 'nl', isoCode: 'nl', component: Nl_flag },
-		{ displayName: 'Deutsch', i18n: 'de', isoCode: 'de', component: De_flag }
-	]
+    { displayName: 'English', i18n: 'en', isoCode: 'gb', component: Gb_flag },
+    { displayName: 'Nederlands', i18n: 'nl', isoCode: 'nl', component: Nl_flag },
+    { displayName: 'Deutsch', i18n: 'de', isoCode: 'de', component: De_flag }
+  ];
 
   // TODO: BUG: bind this input to $listbox.selected
   export let selected: string = supportedLanguages[0].i18n; // default: 'en'
@@ -65,7 +64,7 @@ currently using component: https://captaincodeman.github.io/svelte-headlessui/li
       <button
         use:listbox.button
         on:select={onSelect}
-        class="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-sm ring-1 ring-slate-200 focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-violet-300 sm:text-sm"
+        class="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-sm ring-1 ring-slate-200 focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-violet-300 dark:bg-slate-800 dark:text-neutral-300 dark:ring-slate-900 dark:focus-visible:ring-slate-900 sm:text-sm"
       >
         <!-- <span class="block truncate"> -->
         <span class="flex items-center">
@@ -89,7 +88,7 @@ currently using component: https://captaincodeman.github.io/svelte-headlessui/li
       >
         <ul
           use:listbox.items
-          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+          class="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-slate-800 sm:text-sm"
         >
           {#each supportedLanguages as language}
             {@const active = $listbox.active === language}
@@ -97,13 +96,15 @@ currently using component: https://captaincodeman.github.io/svelte-headlessui/li
             <!-- TODO: bug: item[0] is always selected on reload -->
             <li
               class="relative flex cursor-default select-none items-center py-2 pl-10 pr-4 {active
-                ? 'bg-violet-100 text-violet-900'
-                : 'text-gray-900'}"
+                ? 'bg-violet-100 text-violet-900 dark:bg-violet-700 dark:text-violet-300'
+                : 'text-gray-900 dark:text-neutral-300'}"
               use:listbox.item={{ value: language }}
             >
               <!-- Checkmark -->
               {#if selected}
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-violet-600">
+                <span
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 text-violet-600 dark:text-violet-200"
+                >
                   <Check class="h-5 w-5" strokeWidth="2" />
                 </span>
               {/if}

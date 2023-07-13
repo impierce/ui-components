@@ -16,12 +16,12 @@
 
 <div class={`${size == 'small' ? 'h-14 w-14' : 'h-24 w-24'} relative drop-shadow-md`}>
   <div
-    class="absolute left-0 top-0 h-full w-full rounded-full border-slate-300 bg-white ring-1 ring-slate-300"
+    class="absolute left-0 top-0 h-full w-full rounded-full border-slate-300 bg-white ring-1 ring-slate-300 dark:border-slate-700 dark:bg-slate-600 dark:ring-slate-700"
   />
   <div
     class={`${
       size == 'small' ? 'h-12 w-12' : ''
-    } absolute m-1 flex items-center justify-center rounded-full bg-slate-200 ring-1 ring-slate-300`}
+    } absolute m-1 flex items-center justify-center rounded-full bg-slate-200 ring-1 ring-slate-300 dark:bg-slate-500 dark:ring-slate-600`}
     style={`${size == 'small' ? '' : 'height: 88px; width: 88px;'}`}
   >
     {#if imageSrc}
@@ -31,7 +31,7 @@
         alt={'avatar'}
       />
     {:else if initials?.length === 2}
-      <div class="text-xl font-semibold text-slate-400">{initials}</div>
+      <div class="text-xl font-semibold text-slate-400 dark:text-slate-700">{initials}</div>
     {:else}
       <div class="text-xl font-semibold text-slate-400"><Camera /></div>
     {/if}
