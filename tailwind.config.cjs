@@ -1,4 +1,8 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
+// import typography from '@tailwindcss/typography';
+// import plugin from 'tailwindcss/plugin';
+const typography = require('@tailwindcss/typography');
+// const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -61,5 +65,21 @@ module.exports = {
       }
     }
   },
-  plugins: [require('tailwindcss-animate')]
+  plugins: [
+    require('tailwindcss-animate'),
+    typography,
+    // plugin(function ({ addVariant, matchUtilities, theme }) {
+    //   addVariant('hocus', ['&:hover', '&:focus']);
+    //   // Square utility
+    //   matchUtilities(
+    //     {
+    //       square: (value) => ({
+    //         width: value,
+    //         height: value
+    //       })
+    //     },
+    //     { values: theme('spacing') }
+    //   );
+    // })
+  ]
 };

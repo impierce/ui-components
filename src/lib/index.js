@@ -5,7 +5,7 @@ import Avatar from './atoms/Avatar.svelte';
 // import Button from './atoms/Button.svelte';
 // import Input from './atoms/Input.svelte';
 import ProgressBar from './atoms/ProgressBar.svelte';
-import Select from './atoms/Select.svelte';
+import LanguageSelect from './atoms/LanguageSelect.svelte';
 
 // Molecules
 import BottomNavigation from './molecules/BottomNavigation.svelte';
@@ -23,12 +23,10 @@ import { Checkbox } from './components/ui/checkbox/index';
 
 import { ThreeDotsFade as LoadingSpinner } from 'svelte-svg-spinners';
 
-// export { default as Select } from './atoms/select/Select.svelte';
-
 export {
   Avatar,
   Button,
-  Select,
+  LanguageSelect,
   LoadingSpinner,
   Input,
   Label,

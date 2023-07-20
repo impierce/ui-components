@@ -1,18 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import Select from '$lib/atoms/select/Select.svelte';
+import LanguageSelect from '$lib/atoms/LanguageSelect.svelte';
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/svelte/writing-stories/introduction
 const meta = {
-  title: 'Atoms/Select-2',
-  component: Select,
+  title: 'Atoms/Language Select',
+  component: LanguageSelect,
   tags: ['autodocs'],
   argTypes: {
-    value: {
-      // control: { type: 'range', min: 0, max: 100, step: 10 }
-    }
+    selected: undefined
   }
-} satisfies Meta<Select>;
+} satisfies Meta<LanguageSelect>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

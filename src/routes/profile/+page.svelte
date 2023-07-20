@@ -5,7 +5,7 @@
   import CredentialListEntry from '$lib/molecules/CredentialListEntry.svelte';
   import { CreditCard, FingerPrint, Identification, QrCode } from 'svelte-heros-v2';
   import AlertDialog from '$lib/molecules/AlertDialog.svelte';
-  import Select from '$lib/atoms/Select.svelte';
+  import LanguageSelect from '$lib/atoms/LanguageSelect.svelte';
 
   export let credentials: any = [
     { title: 'Personal information', description: 'Self-issued credential' },
@@ -35,7 +35,7 @@
     <div class="flex justify-center text-3xl font-bold">John Doe</div>
 
     <div class="flex justify-center">
-      <Select />
+      <LanguageSelect />
     </div>
 
     <!-- w-full absolute bottom-0 -z-10" /> -->
