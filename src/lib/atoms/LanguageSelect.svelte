@@ -3,7 +3,7 @@ issue: https://github.com/huntabyte/shadcn-svelte/issues/105
 currently using component: https://captaincodeman.github.io/svelte-headlessui/listbox/
 -->
 <script lang="ts">
-  import { createListbox, type Listbox } from 'svelte-headlessui';
+  import { createListbox } from 'svelte-headlessui';
   import Transition from 'svelte-transition';
   import { Check, ChevronDown } from 'svelte-heros-v2';
   import { createEventDispatcher, onMount } from 'svelte';
