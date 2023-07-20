@@ -35,7 +35,7 @@
     <div class="flex justify-center text-3xl font-bold">John Doe</div>
 
     <div class="flex justify-center">
-      <LanguageSelect />
+      <LanguageSelect selected='de' />
     </div>
 
     <!-- w-full absolute bottom-0 -z-10" /> -->

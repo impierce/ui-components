@@ -1,6 +1,4 @@
-import { loadConfigFromFile, mergeConfig } from 'vite';
-// import * as path from 'path';
-const path = require('path');
+import { InlineConfig, Plugin } from 'vite';
 import type { StorybookConfig } from '@storybook/sveltekit';
 
 const config: StorybookConfig = {
@@ -22,23 +20,31 @@ const config: StorybookConfig = {
     disableTelemetry: true
   },
   staticDirs: ['../static'],
-  async viteFinal(config, { configType }) {
-    const { config: userConfig } = await loadConfigFromFile(
-      path.resolve(__dirname, '../vite.config.ts')
-    );
-    // console.log('userConfig', userConfig);
-    // Remove Svelte plugins that would duplicate those added by the Storybook plugin
-    const plugins = userConfig.plugins
-      .flat(1)
-      .filter((p) => p.name !== undefined)
-      .filter(
-        (p) => !p.name.startsWith('vite-plugin-svelte') || p.name === 'vite-plugin-svelte-kit'
-      );
-    console.log('plugins', plugins);
-    return mergeConfig(config, {
-      ...userConfig,
-      plugins
-    });
+  viteFinal(config) {
+    return workaroundSvelteDocgenPluginConflictWithUnpluginIcons(config);
   }
 };
+
 export default config;
+
+// https://github.com/storybookjs/storybook/issues/20562
+function workaroundSvelteDocgenPluginConflictWithUnpluginIcons(config: InlineConfig): InlineConfig {
+  if (!config.plugins) return config;
+
+  const [_internalPlugins, ...userPlugins] = config.plugins as Plugin[];
+  const docgenPlugin = userPlugins.find(
+    (plugin) => plugin.name === 'storybook:svelte-docgen-plugin'
+  );
+  if (docgenPlugin) {
+    const origTransform = docgenPlugin.transform;
+    const newTransform: typeof origTransform = (code, id, options) => {
+      if (id.startsWith('~icons/')) {
+        return;
+      }
+      return (origTransform as Function)?.call(docgenPlugin, code, id, options);
+    };
+    docgenPlugin.transform = newTransform;
+    docgenPlugin.enforce = 'post';
+  }
+  return config;
+}

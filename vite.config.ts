@@ -3,9 +3,7 @@ import { defineConfig } from 'vitest/config';
 import Icons from 'unplugin-icons/vite';
 
 export default defineConfig({
-  // TODO: Known bug: cannot use compiler: 'svelte' (https://github.com/storybookjs/builder-vite/issues/419)
-  plugins: [sveltekit(), Icons({ compiler: 'raw' })],
-  // plugins: [sveltekit(), Icons({ compiler: 'svelte' })],
+  plugins: [sveltekit(), Icons({ compiler: 'svelte' })],
   server: {
     port: 3000
   },

@@ -8,7 +8,10 @@ const meta = {
   component: LanguageSelect,
   tags: ['autodocs'],
   argTypes: {
-    selected: undefined
+    selected: {
+      control: { type: 'select' },
+      options: ['en', 'nl', 'de']
+    }
   }
 } satisfies Meta<LanguageSelect>;
 

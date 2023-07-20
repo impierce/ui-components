@@ -6,28 +6,20 @@ currently using component: https://captaincodeman.github.io/svelte-headlessui/li
   import { createListbox, type Listbox } from 'svelte-headlessui';
   import Transition from 'svelte-transition';
   import { Check, ChevronDown } from 'svelte-heros-v2';
-  import { SvelteComponent, SvelteComponentTyped, createEventDispatcher, onMount } from 'svelte';
-  import Avatar from './Avatar.svelte';
-
-  import GB from '~icons/flag/gb-4x3?raw&width=24&height=18';
-  import NL from '~icons/flag/nl-4x3?raw&width=24&height=18';
-  import DE from '~icons/flag/de-4x3?raw&width=24&height=18';
-
-  import Gb_flag from './flag/gb.svelte';
-  import Nl_flag from './flag/nl.svelte';
-  import De_flag from './flag/de.svelte';
-  // import GB from '~icons/flag/gb-4x3';
-  // import NL from '~icons/flag/nl-4x3';
-  // import DE from '~icons/flag/de-4x3';
+  import { createEventDispatcher, onMount } from 'svelte';
+  
+  import GB from '~icons/flag/gb-4x3';
+  import NL from '~icons/flag/nl-4x3';
+  import DE from '~icons/flag/de-4x3';
 
   // ISO-3166-1 codes
   type Language = { displayName: string; i18n: string; isoCode: string; component: any };
   type SupportedLanguages = Language[];
 
   const supportedLanguages: SupportedLanguages = [
-    { displayName: 'English', i18n: 'en', isoCode: 'gb', component: Gb_flag },
-    { displayName: 'Nederlands', i18n: 'nl', isoCode: 'nl', component: Nl_flag },
-    { displayName: 'Deutsch', i18n: 'de', isoCode: 'de', component: De_flag }
+    { displayName: 'English', i18n: 'en', isoCode: 'gb', component: GB },
+    { displayName: 'Nederlands', i18n: 'nl', isoCode: 'nl', component: NL },
+    { displayName: 'Deutsch', i18n: 'de', isoCode: 'de', component: DE }
   ];
 
   // TODO: BUG: bind this input to $listbox.selected
@@ -68,11 +60,12 @@ currently using component: https://captaincodeman.github.io/svelte-headlessui/li
       >
         <!-- <span class="block truncate"> -->
         <span class="flex items-center">
-          <span class="mr-1.5 h-[18px] w-[24px]"
-            ><svelte:component
+          <span class="mr-1.5 h-[18px] w-[24px]">
+            <svelte:component
               this={supportedLanguages.find((l) => l.i18n === selected)?.component}
-            /></span
-          >
+            />
+            <!-- {supportedLanguages.find((l) => l.i18n === selected)?.component} -->
+            </span>
           <span>{supportedLanguages.find((l) => l.i18n === selected)?.displayName}</span>
         </span>
         <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
@@ -111,6 +104,7 @@ currently using component: https://captaincodeman.github.io/svelte-headlessui/li
               <!-- Flag -->
               <span class="mr-1.5 h-[18px] w-[24px]">
                 <svelte:component this={language.component} />
+                <!-- {language.component} -->
               </span>
               <!-- Display name -->
               <span class="truncate {selected ? 'font-medium' : 'font-normal'}"
