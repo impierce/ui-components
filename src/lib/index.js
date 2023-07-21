@@ -5,6 +5,7 @@ import Avatar from './atoms/Avatar.svelte';
 // import Button from './atoms/Button.svelte';
 // import Input from './atoms/Input.svelte';
 import ProgressBar from './atoms/ProgressBar.svelte';
+import LanguageSelect from './atoms/LanguageSelect.svelte';
 import Select from './atoms/Select.svelte';
 
 // Molecules
@@ -23,12 +24,15 @@ import { Checkbox } from './components/ui/checkbox/index';
 
 import { ThreeDotsFade as LoadingSpinner } from 'svelte-svg-spinners';
 
-// export { default as Select } from './atoms/select/Select.svelte';
+// Melt UI
+import MeltUiSelect from './melt-ui/Select.svelte';
 
 export {
   Avatar,
   Button,
+  LanguageSelect,
   Select,
+  MeltUiSelect,
   LoadingSpinner,
   Input,
   Label,

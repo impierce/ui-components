@@ -8,23 +8,23 @@ issue: https://github.com/huntabyte/shadcn-svelte/issues/105
   import { createEventDispatcher } from 'svelte';
 
   // ISO-3166-1 codes
-  type Language = { displayName: string; i18n: string, isoCode: string };
+  type Language = { displayName: string; i18n: string; isoCode: string };
   type SupportedLanguages = Language[];
 
   // prettier-ignore
   const supportedLanguages: SupportedLanguages = [
-		{ displayName: 'English', i18n: 'en', isoCode: 'gb' },
-		{ displayName: 'Nederlands', i18n: 'nl', isoCode: 'nl' },
-		{ displayName: 'Deutsch', i18n: 'de', isoCode: 'de' }
-	]
+          { displayName: 'English', i18n: 'en', isoCode: 'gb' },
+          { displayName: 'Nederlands', i18n: 'nl', isoCode: 'nl' },
+          { displayName: 'Deutsch', i18n: 'de', isoCode: 'de' }
+      ]
 
   // TODO: BUG: bind this input to $listbox.selected
   export let selected: string = supportedLanguages[0].displayName; // default
 
   // TODO: type list so 'selected' isn't 'any'
-  const listbox = createListbox<SupportedLanguages>({
+  const listbox = createListbox({
     label: 'Actions',
-    selected: supportedLanguages.find((l) => l.displayName === selected),
+    selected: supportedLanguages.find((l) => l.displayName === selected)
   });
 
   const dispatch = createEventDispatcher();
