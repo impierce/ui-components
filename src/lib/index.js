@@ -9,6 +9,8 @@ import LanguageSelect from './atoms/LanguageSelect.svelte';
 import Select from './atoms/Select.svelte';
 
 // Molecules
+import ActivityTabs from './molecules/ActivityTabs.svelte';
+import TopNavigation from './molecules/TopNavigation.svelte';
 import BottomNavigation from './molecules/BottomNavigation.svelte';
 import CredentialListEntry from './molecules/CredentialListEntry.svelte';
 
@@ -26,24 +28,29 @@ import { ThreeDotsFade as LoadingSpinner } from 'svelte-svg-spinners';
 
 // Melt UI
 import MeltUiSelect from './melt-ui/Select.svelte';
+import MeltUiTabs from './melt-ui/Tabs.svelte';
 
 export {
   Avatar,
   Button,
   LanguageSelect,
   Select,
+  ActivityTabs,
   MeltUiSelect,
+  MeltUiTabs,
   LoadingSpinner,
   Input,
   Label,
   Checkbox,
   ProgressBar,
+  TopNavigation,
   BottomNavigation,
   CredentialListEntry,
   ActionTemplate,
   DetailsTemplate
 };
 
+export * from './components/ui/tabs';
 export * from './components/ui/sheet';
 // export * from './components/ui/alert';
 export * from './components/ui/alert-dialog';

@@ -1,41 +1,47 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import { Clock, Cog, User } from 'svelte-heros-v2';
+  import Scan from '~icons/lucide/scan';
+  import User from '~icons/lucide/user';
+  import Activity from '~icons/lucide/activity';
+  import NavItem from '$lib/atoms/BottomNavigationItem.svelte';
 
   const dispatch = createEventDispatcher();
 
-  export let active: 'history' | 'profile' | 'settings' = 'profile';
+  export let active: 'me' | 'scan' | 'activity' = 'me';
 </script>
 
 <div
   class="flex justify-evenly border-t bg-white py-2 dark:border-slate-900 dark:bg-slate-800 sm:justify-center sm:space-x-24"
 >
-  <button
-    class="rounded-full p-4 hover:bg-slate-100 dark:hover:bg-slate-700"
-    on:click={() => dispatch('history')}
-  >
-    <Clock
-      class={`${active == 'history' ? 'text-violet-700' : 'text-slate-400'}`}
-      strokeWidth="2"
-    />
-  </button>
-  <button
-    class="rounded-full p-4 hover:bg-slate-100 dark:hover:bg-slate-700"
-    on:click={() => dispatch('profile')}
-  >
+
+  <!-- 1: Me -->
+  <NavItem label="Me" active={active == 'me'} on:click={() => dispatch('me')}>
+    <!-- Currently, there is no better way of applying conditional Tailwind classes to a named slot inside a component. -->
     <User
-      class={`${
-        active == 'profile'
-          ? 'text-violet-700 dark:text-violet-600'
-          : 'text-slate-400 dark:text-slate-300'
+      slot="icon"
+      class={`h-6 w-6 ${
+        active == 'me' ? 'text-violet-700 dark:text-violet-600' : 'text-slate-500 dark:text-slate-400'
       }`}
-      strokeWidth="2"
     />
-  </button>
-  <button
-    class="rounded-full p-4 hover:bg-slate-100 dark:hover:bg-slate-700"
-    on:click={() => dispatch('settings')}
-  >
-    <Cog class={`${active == 'settings' ? 'text-violet-700' : 'text-slate-400'}`} strokeWidth="2" />
-  </button>
+  </NavItem>
+
+  <!-- 2: Scan -->
+  <NavItem label="Scan" active={active == 'scan'} on:click={() => dispatch('scan')}>
+    <Scan
+      slot="icon"
+      class={`h-6 w-6 ${
+        active == 'scan' ? 'text-violet-700 dark:text-violet-600' : 'text-slate-500 dark:text-slate-400'
+      }`}
+    />
+  </NavItem>
+
+  <!-- 3: Activity -->
+  <NavItem label="Activity" active={active == 'activity'} on:click={() => dispatch('activity')}>
+    <Activity
+      slot="icon"
+      class={`h-6 w-6 ${
+        active == 'activity' ? 'text-violet-700 dark:text-violet-600' : 'text-slate-500 dark:text-slate-400'
+      }`}
+    />
+  </NavItem>
 </div>
