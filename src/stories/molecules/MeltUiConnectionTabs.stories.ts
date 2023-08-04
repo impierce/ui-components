@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import MeltUiTabs from '$lib/melt-ui/Tabs.svelte';
+import MeltUiConnectionTabs from '$lib/melt-ui/tabs/ConnectionTabs.svelte';
 
 const meta = {
-  title: 'Molecules/Melt UI Tabs',
-  component: MeltUiTabs,
+  title: 'Molecules/Connection Tabs (Melt UI)',
+  component: MeltUiConnectionTabs,
   tags: ['autodocs'],
   argTypes: {}
-} satisfies Meta<MeltUiTabs>;
+} satisfies Meta<MeltUiConnectionTabs>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

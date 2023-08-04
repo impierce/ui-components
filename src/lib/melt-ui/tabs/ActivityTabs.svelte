@@ -8,24 +8,26 @@
 
 <div
   melt={$root}
-  class="flex max-w-[25rem] flex-col overflow-hidden
-    data-[orientation=vertical]:flex-row"
+  class="flex h-full flex-col
+    overflow-hidden data-[orientation=vertical]:flex-row"
 >
   <div
     melt={$list}
-    class="flex shrink-0 overflow-x-auto border-b border-slate-100 bg-white
+    class="flex h-[57px] shrink-0 overflow-x-auto border-b bg-white
       data-[orientation=vertical]:flex-col data-[orientation=vertical]:border-r"
-    aria-label="Manage your account"
+    aria-label="Manage your activity"
   >
-    <button melt={$trigger('connections')} class="trigger">Connections</button>
-    <button melt={$trigger('history')} class="trigger">History</button>
+    <button melt={$trigger('connections')} class="trigger font-medium text-slate-500"
+      >Connections</button
+    >
+    <button melt={$trigger('history')} class="trigger font-medium text-slate-500">History</button>
   </div>
 
-  <div melt={$content('connections')} class="grow bg-white p-5">
+  <div melt={$content('connections')} class="grow bg-white">
     <slot name="connections" />
   </div>
 
-  <div melt={$content('history')} class="grow bg-white p-5">
+  <div melt={$content('history')} class="grow bg-white">
     <slot name="history" />
   </div>
 </div>
@@ -33,7 +35,7 @@
 <style lang="postcss">
   .trigger {
     display: flex;
-    height: theme(spacing.11);
+    /* height: theme(spacing.11); */
     flex: 1;
     cursor: default;
     user-select: none;
@@ -43,7 +45,7 @@
     background-color: theme(colors.white);
     padding-inline: theme(spacing.2);
     line-height: 1;
-    color: theme(colors.blue.900);
+    /* color: theme(colors.blue.900); */
 
     &:focus {
       position: relative;
@@ -55,7 +57,7 @@
     }
 
     &[data-state='active'] {
-      @apply text-blue-700 focus:relative;
+      @apply text-violet-700 focus:relative;
     }
 
     &[data-state='active'][data-orientation='horizontal'] {

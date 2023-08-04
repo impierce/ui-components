@@ -7,6 +7,7 @@ import Avatar from './atoms/Avatar.svelte';
 import ProgressBar from './atoms/ProgressBar.svelte';
 import LanguageSelect from './atoms/LanguageSelect.svelte';
 import Select from './atoms/Select.svelte';
+import SearchInput from './atoms/Input.svelte';
 
 // Molecules
 import ActivityTabs from './molecules/ActivityTabs.svelte';
@@ -28,16 +29,19 @@ import { ThreeDotsFade as LoadingSpinner } from 'svelte-svg-spinners';
 
 // Melt UI
 import MeltUiSelect from './melt-ui/Select.svelte';
-import MeltUiTabs from './melt-ui/Tabs.svelte';
+import MeltUiActivityTabs from './melt-ui/tabs/ActivityTabs.svelte';
+import MeltUiConnectionTabs from './melt-ui/tabs/ConnectionTabs.svelte';
 
 export {
   Avatar,
+  SearchInput,
   Button,
   LanguageSelect,
   Select,
   ActivityTabs,
   MeltUiSelect,
-  MeltUiTabs,
+  MeltUiActivityTabs,
+  MeltUiConnectionTabs,
   LoadingSpinner,
   Input,
   Label,
