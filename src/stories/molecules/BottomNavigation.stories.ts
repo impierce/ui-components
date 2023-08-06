@@ -10,7 +10,7 @@ const meta = {
   argTypes: {
     active: {
       control: { type: 'select' },
-      options: ['history', 'profile', 'settings']
+      options: ['me', 'scan', 'activity']
     }
   }
 } satisfies Meta<BottomNavigation>;
