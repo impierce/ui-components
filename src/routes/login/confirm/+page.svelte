@@ -1,7 +1,7 @@
 <script>
   import { goto } from '$app/navigation';
   import Button from '$lib/atoms/Button.svelte';
-  import BottomNavigation from '$lib/molecules/BottomNavigation.svelte';
+  import BottomNavigation from '$lib/molecules/navigation/BottomNavBar.svelte';
   import ActionTemplate from '$lib/templates/ActionTemplate.svelte';
   import { CheckBadge, QuestionMarkCircle } from 'svelte-heros-v2';
   import { fly, slide } from 'svelte/transition';

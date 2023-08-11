@@ -17,6 +17,10 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     title: 'Graduate diploma',
-    description: 'University of Oxford'
+    description: 'University of Oxford',
+    color: 'bg-amber-100',
+  },
+  parameters: {
+    backgrounds: { values: [{ name: 'slate-100', value: '#f1f5f9', default: true }] }
   }
 };

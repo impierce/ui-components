@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import BottomNavigation from '$lib/molecules/BottomNavigation.svelte';
+import BottomNavBar from '$lib/molecules/navigation/BottomNavBar.svelte';
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/svelte/writing-stories/introduction
 const meta = {
   title: 'Molecules/Bottom Navigation',
-  component: BottomNavigation,
+  component: BottomNavBar,
   tags: ['autodocs'],
   argTypes: {
     active: {
@@ -13,7 +13,7 @@ const meta = {
       options: ['me', 'scan', 'activity']
     }
   }
-} satisfies Meta<BottomNavigation>;
+} satisfies Meta<BottomNavBar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

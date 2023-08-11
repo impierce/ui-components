@@ -1,36 +1,36 @@
 <script lang="ts">
-  import { createTabs } from '@melt-ui/svelte';
+  import { createTabs, melt } from '@melt-ui/svelte';
 
-  const { root, list, content, trigger } = createTabs({
-    value: 'summary'
+  const { elements: { root, list, content, trigger }} = createTabs({
+    defaultValue: 'summary'
   });
 </script>
 
 <div
-  melt={$root}
+  use:melt={$root}
   class="flex h-full flex-col
     overflow-hidden data-[orientation=vertical]:flex-row"
 >
   <div
-    melt={$list}
+    use:melt={$list}
     class="flex h-[57px] shrink-0 overflow-x-auto border-b bg-white
       data-[orientation=vertical]:flex-col data-[orientation=vertical]:border-r"
     aria-label="Manage your connection"
   >
-    <button melt={$trigger('summary')} class="trigger font-medium text-slate-500">Summary</button>
-    <button melt={$trigger('data')} class="trigger font-medium text-slate-500">Data</button>
-    <button melt={$trigger('history')} class="trigger font-medium text-slate-500">History</button>
+    <button use:melt={$trigger('summary')} class="trigger font-medium text-slate-500">Summary</button>
+    <button use:melt={$trigger('data')} class="trigger font-medium text-slate-500">Data</button>
+    <button use:melt={$trigger('history')} class="trigger font-medium text-slate-500">History</button>
   </div>
 
-  <div melt={$content('summary')} class="grow bg-white">
+  <div use:melt={$content('summary')} class="grow bg-white">
     <slot name="summary" />
   </div>
 
-  <div melt={$content('data')} class="grow bg-white">
+  <div use:melt={$content('data')} class="grow bg-white">
     <slot name="data" />
   </div>
 
-  <div melt={$content('history')} class="grow bg-white">
+  <div use:melt={$content('history')} class="grow bg-white">
     <slot name="history" />
   </div>
 </div>

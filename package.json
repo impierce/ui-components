@@ -1,6 +1,6 @@
 {
   "name": "@impierce/ui-components",
-  "version": "0.0.15-alpha",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Impierce/ui-components.git"
@@ -40,7 +40,7 @@
     "svelte": "^3.57.0"
   },
   "dependencies": {
-    "@melt-ui/svelte": "^0.24.0",
+    "@melt-ui/svelte": "^0.33.1",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "flag-icons": "^6.7.0",
@@ -55,7 +55,8 @@
   "devDependencies": {
     "@iconify-json/flag": "^1.1.32",
     "@iconify-json/lucide": "^1.1.109",
-    "@melt-ui/pp": "^0.0.6",
+    "@iconify-json/ph": "^1.1.6",
+    "@melt-ui/pp": "^0.1.1",
     "@playwright/test": "^1.28.1",
     "@storybook/addon-essentials": "~7.0.27",
     "@storybook/addon-interactions": "~7.0.27",

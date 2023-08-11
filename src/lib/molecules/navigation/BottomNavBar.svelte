@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class="flex justify-evenly border-t bg-white py-2 dark:border-slate-900 dark:bg-slate-800 sm:justify-center sm:space-x-24"
+  class="flex justify-evenly bg-white py-0 dark:border-slate-900 dark:bg-slate-800 sm:justify-center sm:space-x-24"
 >
 
   <!-- 1: Me -->
@@ -20,7 +20,7 @@
     <User
       slot="icon"
       class={`h-6 w-6 ${
-        active == 'me' ? 'text-violet-700 dark:text-violet-600' : 'text-slate-500 dark:text-slate-400'
+        active == 'me' ? 'text-black dark:text-white' : 'text-slate-400 dark:text-slate-500'
       }`}
     />
   </NavItem>
@@ -30,7 +30,7 @@
     <Scan
       slot="icon"
       class={`h-6 w-6 ${
-        active == 'scan' ? 'text-violet-700 dark:text-violet-600' : 'text-slate-500 dark:text-slate-400'
+        active == 'scan' ? 'text-black dark:text-white' : 'text-slate-400 dark:text-slate-500'
       }`}
     />
   </NavItem>
@@ -40,7 +40,7 @@
     <Activity
       slot="icon"
       class={`h-6 w-6 ${
-        active == 'activity' ? 'text-violet-700 dark:text-violet-600' : 'text-slate-500 dark:text-slate-400'
+        active == 'activity' ? 'text-black dark:text-white' : 'text-slate-400 dark:text-slate-500'
       }`}
     />
   </NavItem>

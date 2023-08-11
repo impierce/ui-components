@@ -12,8 +12,9 @@ import SearchInput from './atoms/Input.svelte';
 // Molecules
 import ActivityTabs from './molecules/ActivityTabs.svelte';
 import TopNavigation from './molecules/TopNavigation.svelte';
-import BottomNavigation from './molecules/BottomNavigation.svelte';
+import BottomNavBar from './molecules/navigation/BottomNavBar.svelte';
 import CredentialListEntry from './molecules/CredentialListEntry.svelte';
+import BottomDrawer from './molecules/dialogs/BottomDrawer.svelte';
 
 // Templates
 import ActionTemplate from './templates/ActionTemplate.svelte';
@@ -48,10 +49,11 @@ export {
   Checkbox,
   ProgressBar,
   TopNavigation,
-  BottomNavigation,
+  BottomNavBar,
   CredentialListEntry,
   ActionTemplate,
-  DetailsTemplate
+  DetailsTemplate,
+  BottomDrawer,
 };
 
 export * from './components/ui/tabs';
