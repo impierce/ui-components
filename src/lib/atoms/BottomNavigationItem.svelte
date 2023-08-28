@@ -10,14 +10,12 @@
 <div class="flex flex-col items-center">
   <!-- Indicator -->
   {#if active}
-    <div class="h-[4px] w-full rounded-full bg-indigo-500" />
+    <div class="h-[4px] w-full rounded-full bg-primary" />
   {/if}
 
   <!-- Button -->
   <button
-    class={`rounded-full px-6 active:bg-slate-100 dark:active:bg-slate-700 ${
-      active ? 'py-1' : 'py-2'
-    }`}
+    class={`rounded-full px-6 active:bg-background ${active ? 'pt-1' : 'pt-2'}`}
     on:click={() => dispatch('click')}
   >
     <div class="flex h-12 w-10 flex-col items-center justify-center">
@@ -25,7 +23,7 @@
       <slot name="icon" />
       <div
         class={`pt-1 text-xs ${
-          active ? 'text-black dark:text-white' : 'text-slate-400 dark:text-slate-500'
+          active ? 'text-black dark:text-primary' : 'text-slate-400 dark:text-white'
         }`}
       >
         {label}

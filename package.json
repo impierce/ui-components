@@ -20,9 +20,9 @@
     "format": "prettier --plugin-search-dir . --write .",
     "storybook": "concurrently 'npm:watch:*' ",
     "watch:storybook": "storybook dev -p 6006 --no-open",
-    "watch:tailwind": "npx tailwindcss -i ./src/app.postcss -o ./static/tailwind.css --watch",
+    "watch:tailwind": "npx tailwindcss -i ./src/app.css -o ./static/tailwind.css --watch",
     "build-storybook": "npm run build:tailwind && storybook build",
-    "build:tailwind": "npx tailwindcss -i ./src/app.postcss -o ./static/tailwind.css -o ./dist/main.css"
+    "build:tailwind": "npx tailwindcss -i ./src/app.css -o ./static/tailwind.css -o ./dist/main.css"
   },
   "exports": {
     ".": {
@@ -40,7 +40,7 @@
     "svelte": "^3.57.0"
   },
   "dependencies": {
-    "@melt-ui/svelte": "^0.33.1",
+    "@melt-ui/svelte": "^0.39.1",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "flag-icons": "^6.7.0",
@@ -56,7 +56,7 @@
     "@iconify-json/flag": "^1.1.32",
     "@iconify-json/lucide": "^1.1.109",
     "@iconify-json/ph": "^1.1.6",
-    "@melt-ui/pp": "^0.1.1",
+    "@melt-ui/pp": "^0.1.2",
     "@playwright/test": "^1.28.1",
     "@storybook/addon-essentials": "~7.0.27",
     "@storybook/addon-interactions": "~7.0.27",

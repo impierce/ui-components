@@ -21,8 +21,14 @@ module.exports = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        background: {
+          DEFAULT: 'hsl(var(--background))',
+          dark: 'hsl(var(--dark-background))'
+        },
+        foreground: {
+          DEFAULT: 'hsl(var(--foreground))',
+          dark: 'hsl(var(--dark-foreground))'
+        },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))'
@@ -67,7 +73,7 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-animate'),
-    typography,
+    typography
     // plugin(function ({ addVariant, matchUtilities, theme }) {
     //   addVariant('hocus', ['&:hover', '&:focus']);
     //   // Square utility

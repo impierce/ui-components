@@ -10,7 +10,9 @@ const config: StorybookConfig = {
     {
       name: '@storybook/addon-styling',
       options: {
-        postCss: true
+        // postCss: {
+        //   implementation: require.resolve('postcss')
+        // }
       }
     },
     'storybook-tailwind-dark-mode'

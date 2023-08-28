@@ -1,7 +1,6 @@
 <script lang="ts">
   import { createDialog, melt } from '@melt-ui/svelte';
   import { fade, fly } from 'svelte/transition';
-  import X from '~icons/lucide/x';
 
   const {
     elements: { trigger, overlay, content, title, description, close, portalled },
@@ -10,6 +9,13 @@
 
   export let titleText = '';
   export let descriptionText = '';
+
+  // Reactive open state passed in from the outside
+  export let isOpen = false;
+  $: {
+    console.log('isOpen', isOpen);
+    open.set(isOpen);
+  }
 </script>
 
 <!--
@@ -19,6 +25,9 @@
 @prop descriptionText - The description of the dialog.
 
 @slot trigger - The trigger element that opens the dialog.
+@slot content - The content of the dialog.
+@slot icon - An icon.
+@slot close - The close button.
 
 Usage:
 ```svelte
@@ -34,11 +43,13 @@ Usage:
 
 <div use:melt={$portalled}>
   {#if $open}
+    <!-- Overlay -->
     <div
       use:melt={$overlay}
       class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
       transition:fade={{ duration: 150 }}
     />
+
     <!-- TODO: should we respect the bottom safe area as well? -> pb-[calc(25px_+_var(--safe-area-inset-bottom))] -->
     <div
       use:melt={$content}
@@ -60,16 +71,18 @@ Usage:
       >
         <X class="square-4" />
       </button> -->
-      <p use:melt={$title} class="text-center text-2xl font-medium text-black pb-[15px]">{titleText}</p>
-      <p use:melt={$description} class="custom text-center text-slate-500 max-w-[280px]">
+      <slot name="icon" />
+      <p use:melt={$title} class="pb-[15px] text-center text-2xl font-medium text-black">
+        {titleText}
+      </p>
+      <p use:melt={$description} class="custom max-w-[280px] text-center text-slate-500">
         {descriptionText}
       </p>
 
-      <section class="w-full">
-        <slot name="content">
-          <!-- A slot for a component (usually text) -->
-        </slot>
-        <!-- <div class="rounded-md bg-gray-100/80 p-4 text-zinc-800 shadow">
+      <!-- <section class="w-full"> -->
+      <!-- A slot for a component (usually text) -->
+      <slot name="content" />
+      <!-- <div class="rounded-md bg-gray-100/80 p-4 text-zinc-800 shadow">
           <h3 class="mb-3 text-base font-semibold">New invitation</h3>
           <p class="text-sm">
             You have been invited to join the <strong>Designers</strong> team.
@@ -93,7 +106,7 @@ Usage:
             </button>
           </div>
         </div> -->
-      </section>
+      <!-- </section> -->
 
       <!-- Slot for a close button -->
       <slot name="close" close={$close} />
