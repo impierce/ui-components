@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import Avatar from '$lib/atoms/Avatar.svelte';
-  import BottomNavigation from '$lib/molecules/BottomNavigation.svelte';
+  import BottomNavigation from '$lib/molecules/navigation/BottomNavBar.svelte';
   import CredentialListEntry from '$lib/molecules/CredentialListEntry.svelte';
   import { CreditCard, FingerPrint, Identification, QrCode } from 'svelte-heros-v2';
   import AlertDialog from '$lib/molecules/AlertDialog.svelte';

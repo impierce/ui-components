@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import Button from '$lib/atoms/Button.svelte';
   import ProgressBar from '$lib/atoms/ProgressBar.svelte';
-  import BottomNavigation from '$lib/molecules/BottomNavigation.svelte';
+  import BottomNavBar from '$lib/molecules/navigation/BottomNavBar.svelte';
   import CredentialListEntry from '$lib/molecules/CredentialListEntry.svelte';
   import ActionTemplate from '$lib/templates/ActionTemplate.svelte';
   import { AtSymbol, FingerPrint } from 'svelte-heros-v2';
@@ -35,5 +35,5 @@
       </div>
     </ActionTemplate>
   </div>
-  <BottomNavigation />
+  <BottomNavBar />
 </div>

@@ -21,8 +21,14 @@ module.exports = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        background: {
+          DEFAULT: 'hsl(var(--background))',
+          dark: 'hsl(var(--dark-background))'
+        },
+        foreground: {
+          DEFAULT: 'hsl(var(--foreground))',
+          dark: 'hsl(var(--dark-foreground))'
+        },
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))'
@@ -58,7 +64,8 @@ module.exports = {
         sm: 'calc(var(--radius) - 4px)'
       },
       fontFamily: {
-        sans: ['Satoshi-Variable', ...fontFamily.sans]
+        sans: ['Inter', 'sans-serif']
+        // sans: ['Satoshi-Variable', ...fontFamily.sans]
       },
       boxShadow: {
         neon: '0 0 5px theme("colors.violet.200"), 0 0 20px theme("colors.violet.700")'
@@ -66,8 +73,8 @@ module.exports = {
     }
   },
   plugins: [
-    require('tailwindcss-animate'),
-    typography,
+    require('tailwindcss-animate')
+    // typography
     // plugin(function ({ addVariant, matchUtilities, theme }) {
     //   addVariant('hocus', ['&:hover', '&:focus']);
     //   // Square utility

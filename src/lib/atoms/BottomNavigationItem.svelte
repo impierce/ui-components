@@ -7,19 +7,29 @@
   export let label: string;
 </script>
 
-<button
-  class="rounded-full py-2 px-6 hover:bg-slate-100 dark:hover:bg-slate-700"
-  on:click={() => dispatch('click')}
->
-  <div class="flex h-12 w-10 flex-col items-center justify-center">
-    <!-- Currently, there is no better way of applying conditional Tailwind classes to a named slot inside a component. -->
-    <slot name="icon" />
-    <div
-      class={`pt-1 text-xs ${
-        active ? 'text-violet-700 dark:text-violet-600' : 'text-slate-500 dark:text-slate-400'
-      }`}
-    >
-      {label}
+<div class="flex flex-col items-center">
+  <!-- Indicator -->
+  {#if active}
+    <div class="h-[4px] w-full rounded-full bg-primary" />
+  {/if}
+
+  <!-- Button -->
+  <button
+    class={`rounded-full px-6 active:bg-background dark:active:bg-background-dark ${
+      active ? 'pt-2' : 'pt-3'
+    }`}
+    on:click={() => dispatch('click')}
+  >
+    <div class="flex h-12 w-10 flex-col items-center justify-center">
+      <!-- Currently, there is no better way of applying conditional Tailwind classes to a named slot inside a component. -->
+      <slot name="icon" />
+      <div
+        class={`text-[12px]/[20px] pt-[6px] ${
+          active ? 'text-slate-800 dark:text-primary' : 'text-slate-300 dark:text-white'
+        }`}
+      >
+        {label}
+      </div>
     </div>
-  </div>
-</button>
+  </button>
+</div>

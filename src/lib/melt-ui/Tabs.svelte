@@ -3,20 +3,25 @@
   import { crossfade } from 'svelte/transition';
   import { cubicInOut } from 'svelte/easing';
 
-  const {
-    elements: { root, list, content, trigger },
-    states: { value }
-  } = createTabs({ defaultValue: 'connections' });
-
   const [send, receive] = crossfade({
     duration: 250,
     easing: cubicInOut
   });
 
-  const triggers = [
+  interface Tab {
+    id: string;
+    title: string;
+  }
+
+  export let triggers: Tab[] = [
     { id: 'connections', title: 'Connections' },
     { id: 'history', title: 'History' }
   ];
+
+  const {
+    elements: { root, list, content, trigger },
+    states: { value }
+  } = createTabs({ defaultValue: triggers.at(0)?.id });
 </script>
 
 <div use:melt={$root} class="flex h-full flex-col overflow-hidden">
@@ -28,35 +33,34 @@
     {#each triggers as triggerItem}
       <button
         use:melt={$trigger(triggerItem.id)}
-        class="trigger relative m-1 rounded-xl py-2 px-3 text-xs font-semibold text-slate-500 dark:text-white"
+        class="trigger relative m-1 rounded-xl py-2 px-3 text-xs font-bold text-slate-500 dark:text-white"
       >
         {triggerItem.title}
         <!-- Indicator: active navigation item -->
         <!-- {#if $value === triggerItem.id}
-          <div
-            in:send={{ key: 'trigger' }}
-            out:receive={{ key: 'trigger' }}
-            class="absolute bottom-1 left-1/2 h-1 w-6 -translate-x-1/2 rounded-full bg-red-500"
-          />
-        {/if} -->
+            <div
+              in:send={{ key: 'trigger' }}
+              out:receive={{ key: 'trigger' }}
+              class="absolute bottom-1 left-1/2 h-1 w-6 -translate-x-1/2 rounded-full bg-red-500"
+            />
+          {/if} -->
       </button>
     {/each}
   </div>
 
-  <div use:melt={$content('connections')} class="grow">
-    <slot name="connections" />
-  </div>
-
-  <div use:melt={$content('history')} class="grow">
-    <slot name="history" />
-  </div>
+  {#each triggers as triggerItem}
+    <div use:melt={$content(triggerItem.id)} class="grow">
+      <!-- Dynamic slot names: https://github.com/sveltejs/svelte/issues/6493 -->
+      <slot name={triggerItem.id} />
+    </div>
+  {/each}
 </div>
 
 <style lang="postcss">
   .trigger {
     /* display: flex;
-    align-items: center;
-    justify-content: center; */
+      align-items: center;
+      justify-content: center; */
 
     cursor: default;
     user-select: none;
@@ -73,7 +77,7 @@
 
     &[data-state='active'] {
       @apply focus:relative;
-      color: theme('colors.white');
+      color: theme('colors.slate.700');
       background-color: theme('colors.primary.DEFAULT');
     }
   }
