@@ -11,11 +11,11 @@
   class="relative flex h-[50px] items-center justify-between self-stretch bg-foreground py-[13px] px-6 dark:bg-foreground-dark"
 >
   <button class="z-10 -ml-2 rounded-full p-2" on:click={() => dispatch('back')}>
-    <ChevronLeft class="h-6 w-6 text-primary" />
+    <ChevronLeft class="h-6 w-6 text-slate-800 dark:text-white" />
   </button>
   {#if title}
     <p
-      class="custom absolute top-0 left-0 flex h-[50px] w-full items-center justify-center font-medium text-neutral-900 dark:text-white"
+      class="custom absolute top-0 left-0 flex h-[50px] w-full items-center justify-center font-medium text-slate-800 dark:text-white"
     >
       {title}
     </p>

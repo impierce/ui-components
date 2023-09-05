@@ -53,7 +53,7 @@ export {
   CredentialListEntry,
   ActionTemplate,
   DetailsTemplate,
-  BottomDrawer,
+  BottomDrawer
 };
 
 export * from './components/ui/tabs';

@@ -15,15 +15,17 @@
 
   <!-- Button -->
   <button
-    class={`rounded-full px-6 active:bg-background ${active ? 'pt-1' : 'pt-2'}`}
+    class={`rounded-full px-6 active:bg-background dark:active:bg-background-dark ${
+      active ? 'pt-2' : 'pt-3'
+    }`}
     on:click={() => dispatch('click')}
   >
     <div class="flex h-12 w-10 flex-col items-center justify-center">
       <!-- Currently, there is no better way of applying conditional Tailwind classes to a named slot inside a component. -->
       <slot name="icon" />
       <div
-        class={`pt-1 text-xs ${
-          active ? 'text-black dark:text-primary' : 'text-slate-400 dark:text-white'
+        class={`text-[12px]/[20px] pt-[6px] ${
+          active ? 'text-slate-800 dark:text-primary' : 'text-slate-300 dark:text-white'
         }`}
       >
         {label}

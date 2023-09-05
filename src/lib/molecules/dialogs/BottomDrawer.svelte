@@ -54,7 +54,7 @@ Usage:
     <div
       use:melt={$content}
       class="fixed left-0 bottom-0 z-50 flex w-screen flex-col
-              items-center rounded-t-[20px] bg-white px-[18px] py-[25px] shadow-lg focus:outline-none"
+              items-center rounded-t-[20px] bg-foreground p-6 focus:outline-none dark:bg-foreground-dark"
       transition:fly={{
         y: 350,
         duration: 300,
@@ -72,7 +72,10 @@ Usage:
         <X class="square-4" />
       </button> -->
       <slot name="icon" />
-      <p use:melt={$title} class="pb-[15px] text-center text-2xl font-medium text-black">
+      <p
+        use:melt={$title}
+        class="text-[22px]/[30px] pb-[15px] text-center font-semibold text-slate-800 dark:text-white"
+      >
         {titleText}
       </p>
       <p use:melt={$description} class="custom max-w-[280px] text-center text-slate-500">
