@@ -29,7 +29,7 @@
     {#each triggers as triggerItem}
       <button
         use:melt={$trigger(triggerItem.id)}
-        class="trigger relative m-1 rounded-xl py-2 px-3 text-xs font-semibold text-slate-500 dark:text-white"
+        class="trigger relative m-1 rounded-xl py-2 px-3 text-xs font-semibold text-slate-500 dark:text-slate-400"
       >
         {triggerItem.title}
         <!-- Indicator: active navigation item -->
@@ -44,15 +44,15 @@
     {/each}
   </div>
 
-  <div use:melt={$content('summary')} class="grow">
+  <div use:melt={$content('summary')} class="hide-scrollbar grow overflow-y-scroll">
     <slot name="summary" />
   </div>
 
-  <div use:melt={$content('data')} class="grow">
+  <div use:melt={$content('data')} class="hide-scrollbar grow overflow-y-scroll">
     <slot name="data" />
   </div>
 
-  <div use:melt={$content('history')} class="grow">
+  <div use:melt={$content('history')} class="hide-scrollbar grow overflow-y-scroll">
     <slot name="history" />
   </div>
 </div>

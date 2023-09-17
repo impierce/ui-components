@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import AppIcon from '$lib/atoms/AppIcon.svelte';
+import AppIcon from '$lib/atoms/app-icon/AppIcon.svelte';
 
 const meta = {
   title: 'Atoms/AppIcon',

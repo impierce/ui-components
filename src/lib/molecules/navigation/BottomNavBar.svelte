@@ -31,7 +31,7 @@
     <Me
       slot="icon"
       clazz={`h-6 w-6 ${
-        active == 'me' ? 'text-black dark:text-primary' : 'text-slate-400 dark:text-white'
+        active == 'me' ? 'text-slate-800 dark:text-grey' : 'text-slate-300 dark:text-slate-500'
       }`}
     />
   </BottomNavigationItem>
@@ -41,7 +41,7 @@
     <Scan
       slot="icon"
       clazz={`h-6 w-6 ${
-        active == 'scan' ? 'text-black dark:text-primary' : 'text-slate-400 dark:text-white'
+        active == 'scan' ? 'text-slate-800 dark:text-grey' : 'text-slate-300 dark:text-slate-500'
       }`}
     />
   </BottomNavigationItem>
@@ -55,7 +55,9 @@
     <Activity
       slot="icon"
       clazz={`h-6 w-6 ${
-        active == 'activity' ? 'text-black dark:text-primary' : 'text-slate-400 dark:text-white'
+        active == 'activity'
+          ? 'text-slate-800 dark:text-grey'
+          : 'text-slate-300 dark:text-slate-500'
       }`}
     />
   </BottomNavigationItem>

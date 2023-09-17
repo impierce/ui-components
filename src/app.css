@@ -7,12 +7,29 @@
     --background: 0 0% 96%; /* neutral-100, #f5f5f5 */
     --foreground: 0 0% 100%; /* white, #ffffff */
 
-    --primary: 180 42% 66%; /* #83cccc */
+    /* accent */
+    --primary: 180 49% 57%; /* #5cc7c7 */
+    --teal: 178 41% 51%; /* #50b5b2 */
+
+    /* light */
+    --silver: 0 0% 98%; /* #f9f9f9 */
+    --grey: 0 0% 94%; /* #efefef */
+
+    /* dark */
+    --navy: 213 50% 23%; /* #1e3959 */
+    --blue: 212 55% 18%; /* #152d49 */
+    --dark: 216 53% 16%; /* #13243d */
 
     /**
      * DARK MODE
      */
     --dark-background: 212 55% 18%; /* lighter, #152D49 */
     --dark-foreground: 216 53% 16%; /* darker, #13243D */
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }

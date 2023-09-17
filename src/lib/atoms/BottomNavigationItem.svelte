@@ -24,8 +24,8 @@
       <!-- Currently, there is no better way of applying conditional Tailwind classes to a named slot inside a component. -->
       <slot name="icon" />
       <div
-        class={`text-[12px]/[20px] pt-[6px] ${
-          active ? 'text-slate-800 dark:text-primary' : 'text-slate-300 dark:text-white'
+        class={`text-[12px]/[20px] pt-[6px] font-medium ${
+          active ? 'text-slate-800 dark:text-grey' : 'text-slate-300 dark:text-slate-500'
         }`}
       >
         {label}

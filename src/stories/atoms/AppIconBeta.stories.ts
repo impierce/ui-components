@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import Logo from '$lib/atoms/app-icon/Logo.svelte';
+import AppIconBeta from '$lib/atoms/app-icon/AppIconBeta.svelte';
 
 const meta = {
-  title: 'Atoms/Logo',
-  component: Logo
-} satisfies Meta<Logo>;
+  title: 'Atoms/AppIconBeta',
+  component: AppIconBeta
+} satisfies Meta<AppIconBeta>;
 
 export default meta;
 
